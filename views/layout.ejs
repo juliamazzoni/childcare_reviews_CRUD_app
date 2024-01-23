@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    
+    <h1><a href="/">Childcare Reviews app</a></h1>
+
+    <% if(isLoggedIn){%>
+        <p> welcome back <%= currentUser.name %></p> 
+        <form action="/logout?_method=delete" method="post">
+            <button>logout</button>
+        </form> 
+    
+    <%}else{%>
+    
+        <a href="/login">Login</a>
+
+    <%}%>
+    <%-body%>
+
+</body>
+</html>

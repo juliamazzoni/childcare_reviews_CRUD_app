@@ -1,0 +1,22 @@
+<h2>Edit Review</h2>
+<form action="/childcare/<%= childcare.id %>?_method=put" method="post">
+    <label for="">Name of the Childcare</label>
+    <input type="text" name="name" value="<%= childcare.name%>"><br>
+    <label for="">Location</label>
+    <input type="text" name="location" value="<%= childcare.location %>"><br>
+    <label for="">Zipcode</label>
+    <input type="number" name="zipcode" value="<%= childcare.zipcode%>"><br>
+    <label for="">Image url</label>
+    <input type="text" name="image_url" value="<%= childcare.image_url %>"><br>
+    <label for="">Number of Meals</label>
+    <input type="number" name="number_of_meals" value="<%= childcare.number_of_meals %>"><br>
+    <label for="">Provides nappies?</label>
+    <input type="text" name="provide_nappies" value="<%= childcare.provide_nappies%>"><br>
+    <label for="">Opening Hours</label>
+    <input type="text" name="opening_hours" value="<%= childcare.opening_hours%>"><br>
+    <label for="">Daily Fees</label>
+    <input type="number" name="daily_fees" value="<%= childcare.daily_fees%>"><br>
+    <label for="">Write your review here</label>
+    <textarea name="review"><%= childcare.review %></textarea><br>
+    <button>edit your review</button>
+</form>

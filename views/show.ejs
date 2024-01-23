@@ -1,0 +1,20 @@
+<h2><%= childcare.name %></h2>
+<h3><img src="<%= childcare.image_url %>" alt=""></h3>
+<h4>Location: <%= childcare.location %></h4>
+<h4>Zipcode: <%= childcare.zipcode %></h4>
+<h4>Number of Meals: <%= childcare.number_of_meals %></h4>
+<h4>Provide Nappies: <%= childcare.provide_nappies %></h4>
+<h4>Opening Hours: <%= childcare.opening_hours %></h4>
+<h4>Daily Fees: $<%= childcare.daily_fees %></h4>
+<h4>Review: <%= childcare.review %></h4>
+
+
+<% if(childcare.user_id === currentUser.id){%>
+    
+<form action="/childcare/<%= childcare.id %>?_method=delete" method="post">
+    <button>delete</button>
+</form>
+
+<a href="/childcare/<%= childcare.id %>/edit">Edit Review</a>
+
+<% }%>

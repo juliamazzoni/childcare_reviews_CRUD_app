@@ -1,11 +1,15 @@
-<h3>in order to write a review, you need to login first</h3>
+<div class="login-wrapper">
+    <h3>To be able to write a review, you need to login first!</h3>
 
-<form action="/login" method="post">
-    <label for="">Email</label>
-    <input type="email" name="email">
-    <label for="">Password</label>
-    <input type="password" name="password">
-    <button>login</button>
-</form>
+    <div class="login-form">
+        <form action="/login" method="post">
+            <label for="">Email</label>
+            <input type="email" name="email">
+            <label for="">Password</label>
+            <input type="password" name="password">
+            <button class="login-btn">login</button>
+        </form>
+    </div>
 
-<h4><a href="/signup">Don't have an account yet? Sign up here</a></h4>
+    <h4>Don't have an account yet? Sign up<a href="/signup">here</a></h4>
+</div>

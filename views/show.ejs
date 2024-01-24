@@ -1,13 +1,21 @@
-<h2><%= childcare.name %></h2>
-<h3><img src="<%= childcare.image_url %>" alt=""></h3>
-<h4>Location: <%= childcare.location %></h4>
-<h4>Zipcode: <%= childcare.zipcode %></h4>
-<h4>Number of Meals: <%= childcare.number_of_meals %></h4>
-<h4>Provide Nappies: <%= childcare.provide_nappies %></h4>
-<h4>Opening Hours: <%= childcare.opening_hours %></h4>
-<h4>Daily Fees: $<%= childcare.daily_fees %></h4>
-<h4>Review: <%= childcare.review %></h4>
-
+<div class="show-wrapper">
+    <div class="show-header">
+        <h2><%= childcare.name %></h2>
+            <div class="div-review">
+                <h4><%= childcare.review %></h4>
+            </div>  
+    </div>
+    <h3><img src="<%= childcare.image_url %>" alt=""></h3>
+    <div class="show-details">
+        <h4>Location: <%= childcare.location %></h4>
+        <h4>Zipcode: <%= childcare.zipcode %></h4>
+        <h4>Number of Meals: <%= childcare.number_of_meals %></h4>
+        <h4>Provide Nappies: <%= childcare.provide_nappies %></h4>
+        <h4>Opening Hours: <%= childcare.opening_hours %></h4>
+        <h4>Daily Fees: $<%= childcare.daily_fees %></h4>
+    </div>
+    
+</div>
 
 <% if(childcare.user_id === currentUser.id){%>
     

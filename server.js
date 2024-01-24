@@ -14,6 +14,7 @@ const methodOverride = require('method-override')
 
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
+// app.use(express.static('files'))
 app.use(methodOverride('_method'))
 app.use(requestLogger)
 
@@ -29,7 +30,7 @@ app.use(express.urlencoded({ extended: true }))
 
 app.get('/', (req, res) => {
 
-    const sql = 'select * from childcare;'
+    const sql = 'SELECT * FROM childcare;'
     
     db.query(sql, (err, result) => {
         if(err) {
@@ -43,10 +44,47 @@ app.get('/', (req, res) => {
     })
 })
 
+app.get('/childcare/myreviews', (req, res) => {
+    const sql = `
+                SELECT * FROM childcare
+                WHERE user_id=${req.session.userId};
+                `
+    
+    db.query(sql, (err, result) => {
+        if(err) {
+            console.log(err)
+        }
+        let childcares = result.rows
+
+        res.render('my_reviews', {
+            childcares: childcares,
+        })
+    })
+})
+
+app.post('/childcare/review_by_zipcode', (req, res) => {
+    const sql = `
+                SELECT * FROM childcare
+                WHERE zipcode=$1;
+                `
+
+    db.query(sql, [req.body.zipcode], (err, result) => {
+        if(err) {
+            console.log(err)
+        }
+        let childcares = result.rows
+
+        res.render('by_zipcode', {
+            childcares: childcares,
+        })
+    })
+})
+
 // adding a new review
 app.get('/childcare/new', ensureLoggedIn, (req, res) => {
     res.render('new')
 })
+
 
 // review of one specific childcare 
 app.get('/childcare/:id', (req, res) => {
@@ -256,6 +294,7 @@ app.post('/signup', (req, res) => {
         })
     })
 })
+
 
 app.delete('/logout', (req, res) => {
     req.session.userId = null

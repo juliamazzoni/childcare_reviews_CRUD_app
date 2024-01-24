@@ -1,16 +1,19 @@
 
-<p><a href="/childcare/new">Write a review</a></p>
+
 
 <div class="grid-wrapper">
 <% for (let childcare of childcares) {%>
 
     <div class="ui-card">
 
-    <h2> <%= childcare.name %> </h2>
-    <h3> <%= childcare.location %> </h3>
-   <h3><img src="<%= childcare.image_url %>" alt=""></h3>
-   <a href="/childcare/<%= childcare.id %>">see reviews</a>
-
+        <h2> <%= childcare.name %> </h2>
+        <h3> <%= childcare.location %> </h3>
+        <h3>
+            <a href="/childcare/<%= childcare.id %>">
+                <img src="<%= childcare.image_url %>" alt="">
+            </a>
+            </h3>
+   
     </div>
 
 <% } %>

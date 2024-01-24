@@ -7,20 +7,38 @@
     <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-    
-    <h1><a href="/">Childcare Reviews app</a></h1>
+    <nav class="nav-bar">
+        <a href="/"><img src="/logo.png" alt="" class="logo"></a>
 
-    <% if(isLoggedIn){%>
-        <p> welcome back <%= currentUser.name %></p> 
-        <form action="/logout?_method=delete" method="post">
-            <button>logout</button>
-        </form> 
-    
-    <%}else{%>
-    
-        <a href="/login">Login</a>
+        <p><a href="/childcare/new" class="nav-links">Add a review</a></p>
 
-    <%}%>
+        <form action="/childcare/review_by_zipcode" method="post">
+            <label for="" ></label>
+            <input type="number" name="zipcode" placeholder="   search by zipcode" class="input-zipcode">
+            <button class="nav-btn">search</button>
+        </form>
+
+        <div class="user-details">
+            <% if(isLoggedIn){%>
+                
+                <form action="/logout?_method=delete" method="post">
+                    <button class="nav-btn">Logout</button>
+                </form> 
+
+                <p><a href="/childcare/myreviews" class="nav-links">My reviews</a></p>
+
+
+                <h2 class="user-name"><%= currentUser.name %></h2>
+
+            
+            <%}else{%>
+            
+                <a href="/login" class="nav-btn">Login</a>
+
+            <%}%>
+        </div>    
+    </nav>
+
     <%-body%>
 
 </body>

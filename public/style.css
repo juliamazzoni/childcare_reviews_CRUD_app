@@ -7,7 +7,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #f56619;;
+    background-color: #f1844a;;
 }
 
 .nav-bar {
@@ -118,8 +118,13 @@ body {
     color: rgb(103, 99, 99);
 }
 
+.show-header h2 {
+   color: #f56619;
+}
+
 .show-wrapper h3{
     text-align: center;
+    
 }
 
 .show-details{
@@ -145,19 +150,18 @@ img {
     margin: auto;
 }
 
-.login-wrapper {
+.login-wrapper, 
+.signup-message-wrapper {
     text-align: center;
     margin: 50px;
 }
 
-.login-wrapper h3 {
+.login-wrapper h3,
+.login-wrapper h4,
+.signup-message-wrapper h3 {
     color: #fff;
 }
 
-.login-wrapper h4 {
-    color: #fff;
-    
-}
 
 .login-wrapper a{
     text-decoration: none;
@@ -186,6 +190,90 @@ img {
     text-decoration: none;
 }
 
+.signup-wrapper {
+    background-color: #fff;
+    text-align: center;
+    width: 700px;
+    padding: 30px;
+    margin: 40px auto;
+    border-radius: 30px;
+}
 
+.signup-wrapper input {
+    margin-bottom: 5px;
+}
 
+.signup-btn {
+    background-color: #f56619;
+    border-radius: 10px;
+    color: #fff;
+    margin-top: 15px;
+    padding: 8px 20px;
+    border: none;
+    text-decoration: none;
+}
 
+.delete-edit-btn-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: baseline;
+    justify-items: center;
+    width: 300px;
+    margin: 10px auto;
+}
+
+.delete-edit-btn-wrapper button {
+    border-radius: 10px;
+    background-color: #fcfcfc;
+    padding: 8px 20px;
+    color: #f56619;
+    border: none;
+}
+
+.delete-edit-btn-wrapper a{
+    background-color: #fcfcfc;
+    border-radius: 10px;
+    color: #f56619;
+    padding: 6px 20px;
+    border: none;
+    text-decoration: none;
+}
+
+.new-wrapper, 
+.edit-wrapper {
+    background-color: #fff;
+    width: 400px;
+    padding: 30px;
+    margin: 40px auto;
+    border-radius: 30px;
+}
+
+.new-wrapper input,
+.edit-wrapper input {
+    margin-bottom: 5px;
+    width: 100%;
+}
+
+.new-wrapper textarea, 
+.edit-wrapper textarea {
+    margin-bottom: 5px;
+    width: 100%;
+    height: 130px;
+}
+
+.new-btn-wrapper, 
+.edit-btn-wrapper{
+    text-align: center;
+}
+
+.new-wrapper button, 
+.edit-wrapper button {
+    border-radius: 10px;
+    background-color: #f56619;;
+    padding: 8px 20px;
+    color: #fcfcfc;
+    border: none;
+    margin: 5px;
+}
+
+ 

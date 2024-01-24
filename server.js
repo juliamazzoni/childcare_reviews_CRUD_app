@@ -257,7 +257,7 @@ app.post('/login', (req, res) => {
                     return
                 }
 
-                console.log('user found')
+                // console.log('user found')
                 req.session.userId = result.rows[0].id
                 res.redirect('/')
             })

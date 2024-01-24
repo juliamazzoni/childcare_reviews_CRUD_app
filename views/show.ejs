@@ -19,10 +19,13 @@
 
 <% if(childcare.user_id === currentUser.id){%>
     
-<form action="/childcare/<%= childcare.id %>?_method=delete" method="post">
-    <button>delete</button>
-</form>
+<div class="delete-edit-btn-wrapper">
+    <form action="/childcare/<%= childcare.id %>?_method=delete" method="post">
+        <button>Delete Review</button>
+    </form>
 
-<a href="/childcare/<%= childcare.id %>/edit">Edit Review</a>
+    <a href="/childcare/<%= childcare.id %>/edit">Edit Review</a>
+</div>
 
 <% }%>
+

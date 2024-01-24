@@ -4,7 +4,7 @@ const express = require('express')
 const bcrypt = require('bcrypt')
 const app = express()
 const expressLayouts = require('express-ejs-layouts')
-const port = 8080
+const port = process.env.PORT || 3000;
 const db = require('./db')
 const session = require('express-session')
 const setCurrentUser = require('./middlewares/set_current_user')
@@ -19,10 +19,11 @@ app.use(methodOverride('_method'))
 app.use(requestLogger)
 
 app.use(session({
-    secret: process.env.SECRET,
+    secret: process.env.SECRET || "mistyrose",
     resave: false,
     saveUninitialized: true
-}))
+})
+);
 
 app.use(setCurrentUser)
 app.use(expressLayouts)

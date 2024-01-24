@@ -71,12 +71,15 @@ app.post('/childcare/review_by_zipcode', (req, res) => {
     db.query(sql, [req.body.zipcode], (err, result) => {
         if(err) {
             console.log(err)
-        }
-        let childcares = result.rows
+            res.redirect('/')
+        }else{
 
-        res.render('by_zipcode', {
+            let childcares = result.rows
+    
+            res.render('by_zipcode', {
             childcares: childcares,
-        })
+            })
+        }
     })
 })
 

@@ -7,7 +7,7 @@
 This is an app with childcare reviews where parents can share their experiences to help other parents making better choices. On the home page you have access to all the reviews parents wrote about childcares and search reviews by zipcode. To be able to see a full review, you should click on the childcare card, then you'll be sent to a page with a full review about the childcare. If you want to write a review yourself, you'll need to be logged in. Once you login (or signup in case you don't have an account yet) you'll be able to write your own review. If you want to access only the reviews you wrote, you can click on the button "my reviews", next to your name on the nav bar. You can also delete and edit your reviews. And before leaving the app, you should click on the button "logout" on the nav bar.
 
 
-### [click here]() to see my live project!
+### [click here](https://nappies.onrender.com/) to see my live project!
 
 
 
